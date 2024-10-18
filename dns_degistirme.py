@@ -66,6 +66,10 @@ def dns_listesini_goster():
     for isim, adres in dns_listesi.items():
         print(f"{isim}:  {adres}")
 
+# mevcut dns gösterme
+def mevcut_dns():
+    print(resolv_conf_path)
+
 # Ana fonksiyon
 def main():
     if len(sys.argv) < 2:
@@ -82,6 +86,8 @@ def main():
         yazma_iznini_kaldir()
         dns_ayarlari_degistir()
         yazma_iznini_geri_al()
+    elif secenek == "-dns":
+        mevcut_dns()    
     else:
         print("Bilinmeyen seçenek. Yardım için -h seçeneğini kullanın.")
 
