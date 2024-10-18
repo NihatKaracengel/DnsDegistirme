@@ -37,6 +37,7 @@ Seçenekler:
   -h, --help      Yardım dökümanını gösterir.
   -list           Mevcut DNS sunucularının listesini gösterir.
   -change         DNS ayarlarını otomatik olarak Google DNS ile değiştirir.
+  -dns            Mevcut DNS Gösterir.
 """)
 
 # Yazma iznini kaldırma
@@ -68,7 +69,7 @@ def dns_listesini_goster():
 
 # mevcut dns gösterme
 def mevcut_dns():
-    print(resolv_conf_path)
+    subprocess.run(["cat", resolv_conf_path], check=True)
 
 # Ana fonksiyon
 def main():
